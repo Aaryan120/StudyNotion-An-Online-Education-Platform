@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin: "https://study-notion-an-online-education-platform-8gei.vercel.app/",
+        origin: ["*"],
         credentials:true,
     })
 )
