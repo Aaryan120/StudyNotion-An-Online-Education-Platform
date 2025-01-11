@@ -27,7 +27,17 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
     cors({
-        origin: ["*"],
+        origin: (origin, callback) => {
+            const allowedOrigins = [
+                "https://study-notion-an-online-education-platform-8gei.vercel.app",
+                "https://study-notion-an-online-education-platform-8gei-ebn9mu7k7.vercel.app",
+            ];
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
         credentials:true,
     })
 )
