@@ -44,7 +44,7 @@ exports.resetPasswordToken = async(req,res) =>{
 
         //generate a frontend link for resetting password 
         //we are hosting our frontend on port 3000 and then we are assigning a token which will generate unique url 
-        const url = `http://localhost:3000/update-password/${token}`;
+        const url = `https://study-notion-an-online-education-platform-8gei.vercel.app/update-password/${token}`;
         //send mail containing the url
         await mailSender(email,
                     "Reset Password link",
